@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>function submitForm() {
+  var form = document.querySelector('#card-form');
+  var formData = new FormData(form);
+  var formobj = {
+    cardNumber: formData.get('cardNumber'),
+    holderName: formdata.get('hname')
+  };
+  window.parent.postMessage('formobj', '*');
+}</script>
+</head>
+<body> 
+  <form action="" id="card-form" onsubmit="submitForm()">
+  <div>
+    <label for="">카드번호</label>  
+    <input type="text" name="cardNumber">
+  </div>
+  <div>
+    <label for="">이름</label>  
+    <input type="text" name="hname">
+  </div>
+  <button type="submit">결제</button>
+  </form>
+</body>
+</html>
